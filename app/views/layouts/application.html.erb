@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Reservation</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <header>
+      <ul>
+        <li><%= link_to t('button.top'), root_path %></li>
+        <% if current_user.admin %>
+          <li><%= link_to t('message.register', model: Room.model_name.human), new_room_path %></li>
+        <% end %>
+        <li><%= link_to t('message.list', model: Room.model_name.human), rooms_path %></li>
+        <li><%= link_to t('button.logout'), auths_path, method: :delete %></li>
+      </ul>
+    </header>
+    <hr>
+    <div class="container">
+      <%= yield %>
+    </div>
+    <hr>
+    <footer>
+      <p>© 2019 Copyright resereved Rooms Reservation</p>
+    </footer>
+  </body>
+</html>

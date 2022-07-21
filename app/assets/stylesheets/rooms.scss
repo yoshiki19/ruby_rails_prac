@@ -1,0 +1,59 @@
+header {
+  width: 100%;
+  background-color: blue;
+  height: 50px;
+  li { margin-top: 20px;
+    margin-right: 10px;
+    display: inline-block;
+    font-size: 20px;
+    a:visited {
+      color: white;
+      &:hover {
+        color: red;
+      }
+    }
+  }
+}
+footer {
+  width: 100%;
+  background-color: blue;
+  color: white;
+  font-size: 12px;
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  left: 0;
+}
+html {
+  position: relative;
+  min-height: 100%;
+  margin: 0 33px 0 33px;
+}
+.container {
+  margin-bottom: 50px;
+}
+.button {
+  background-color: green;
+  padding: 5px;
+  border-radius: 3px;
+  text-decoration: none;
+  &:visited {
+    color: white;
+  }
+}
+.actions input {
+  background-color: green;
+  padding: 5px;
+  border-radius: 3px;
+  color: white;
+}
+.button_cancel {
+  background-color: yellow;
+  padding: 5px;
+  border-radius: 3px;
+  border-width: 1px;
+  border-style: solid;
+  text-decoration: none;
+}
+.room_image { width: 200px; }
+.room_images { width: 100px; }

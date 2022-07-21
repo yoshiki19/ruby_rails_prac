@@ -1,0 +1,18 @@
+one:
+  reserved_date: 2019-05-19 10:30:00
+  usage_time: 2
+  room: two
+  people: 3
+  user: one
+two:
+  reserved_date: 2019-05-25 13:00:00
+  usage_time: 3
+  room: two
+  people: 13
+  user: three
+three:
+  reserved_date: 2019-05-21 15:00:00
+  usage_time: 3
+  room: two
+  people: 8
+  user: two

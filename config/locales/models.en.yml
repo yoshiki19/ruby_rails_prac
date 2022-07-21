@@ -1,0 +1,28 @@
+en:
+  activerecord:
+    models:
+      room: "Conference Room"
+      user: "User"
+      entry: "Reserved Entry"
+    attributes:
+      room:
+        name: "Room name"
+        place: "Place"
+        number: "Seating capacity"
+      entry:
+        user_name: "User Name"
+        user_email: "User Email"
+        reserved_date: "Reserved Date"
+        usage_time: "Usage Time"
+        people: "Number of people"
+      user:
+        name: Name
+        email: Mail Address
+        password: Password
+  activemodel:
+    models:
+      auth: "Authority"
+    attributes:
+      auth:
+        email: "Mail Address"
+        password: "Password"

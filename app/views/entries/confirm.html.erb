@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+<p><%= @entry.user.name %></p>
+<p><%= @entry.user.email %></p>
+<p>
+  <strong><%= Entry.human_attribute_name('reserved_date') %>:</strong>
+  <%= @entry.reserved_date %>
+</p>
+<p>
+  <strong><%= Entry.human_attribute_name('usage_time') %>:</strong>
+  <%= @entry.usage_time %>
+</p>
+<p>
+  <strong><%= Entry.human_attribute_name('people') %>:</strong>
+  <%= @entry.people %>
+</p>
+<%= form_with(model: [@entry.room, @entry], local: true) do |form| %>
+  <%= render "confirm_detail", conf_button: t('word.confirm_ok'), form: form %>
+<% end %>
+<%= form_with(model: [@entry.room, @entry], local: true, url: confirm_back_room_entries_path) do |form| %>
+  <%= render "confirm_detail", conf_button: t('word.confirm_ng'), form: form %>
+<% end %>

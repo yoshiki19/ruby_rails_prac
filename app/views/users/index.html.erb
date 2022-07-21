@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<h1><%= t('message.list', model: User.model_name.human ) %></h1>
+
+<table>
+  <thead>
+    <tr>
+      <th><%= User.human_attribute_name('name') %></th>
+      <th><%= User.human_attribute_name('email') %></th>
+      <th><%= User.human_attribute_name('password') %></th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.name %></td>
+        <td><%= user.email %></td>
+        <td><%= user.password %></td>
+        <td><%= link_to t('button.show'), user %></td>
+        <td><%= link_to t('button.edit'), edit_user_path(user) %></td>
+        <td><%= link_to t('button.destroy'), user, method: :delete, data: { confirm: t('message.delete_confirm', model: user.model_name.human) } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<%= link_to t("word.new"), new_user_path, class: "button" %>

@@ -1,0 +1,28 @@
+ja:
+  activerecord:
+    models:
+      room: 会議室
+      user: ユーザ
+      entry: 予約
+    attributes:
+      room:
+        name: 会議室名
+        place: 場所
+        number: 人数
+      entry:
+        user_name: 利用者
+        user_email: 利用者メールアドレス
+        reserved_date: 予約日
+        usage_time: 利用時間
+        people: 人数
+      user:
+        name: 名前
+        email: メールアドレス
+        password: パスワード
+  activemodel:
+    models:
+      auth: 権限
+    attributes:
+      auth:
+        email: メールアドレス
+        password: パスワード

@@ -1,0 +1,36 @@
+<h1><%= t('message.register', model: Entry.model_name.human) %></h1>
+<%= form_with(model: @entry, local: true, url: confirm_room_entries_path) do |form| %>
+  <% if @entry.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= t 'errors.header', model: @entry.model_name.human, count: @entry.errors.count  %></h2>
+      <ul>
+        <% @entry.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= current_user.name %>
+  </div>
+  <div class="field">
+    <%= current_user.email %>
+  </div>
+
+  <div class="field">
+    <%= form.label :reserved_date %>
+    <%= form.datetime_select :reserved_date %>
+  </div>
+  <div class="field">
+    <%= form.label :usage_time %>
+    <%= form.text_field :usage_time %>
+  </div>
+  <div class="field">
+    <%= form.label :people %>
+    <%= form.number_field :people %>
+  </div>
+  <%= form.hidden_field :room_id %>
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

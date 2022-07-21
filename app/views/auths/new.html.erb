@@ -1,0 +1,25 @@
+<h1><%= t('word.login') %></h1>
+<%= form_with(model: @auth, local: true) do |form| %>
+  <% if @auth.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= t 'errors.header', model: @auth.model_name.human, count: @auth.errors.count %>
+      </h2>
+      <ul>
+        <% @auth.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.text_field :email %>
+  </div>
+  <div class="field">
+    <%= form.label :password %>
+    <%= form.password_field :password %>
+  </div>
+  <div class="actions">
+    <%= form.submit t('word.login') %>
+  </div>
+<% end %>

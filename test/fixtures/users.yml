@@ -1,0 +1,15 @@
+one:
+  name: 山田太郎
+  email: taro@sample.com
+  password: <%= BCrypt::Password.create("tarotaro123") %>
+  admin: true
+two:
+  name: 高橋花子
+  email: hanako@sample.com
+  password: <%= BCrypt::Password.create("hanahana222") %>
+  admin: false
+three:
+  name: 山田洋一
+  email: yama@sample.com
+  password: <%= BCrypt::Password.create("yamayama999") %>
+  admin: false

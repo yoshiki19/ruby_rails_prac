@@ -1,0 +1,16 @@
+one:
+  name: なんでも会議室
+  place: 名古屋
+  number: 11
+two:
+  name: どこでも会議室
+  place: 北海道
+  number: 15
+  terms_of_use: "利用要綱を承諾すること"
+<% 6.times do |n| %>
+room_<%= n %>:
+  name: <%= "第#{n}会議室##{n + 10}" %>
+  place: 東京
+  number: 10
+  terms_of_use: "東京の利用要綱を承諾すること"
+<% end %>

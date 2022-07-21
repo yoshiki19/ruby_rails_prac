@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <% @room.images.each do |image| %>
+    <%= image_tag image, class: "room_image" %>
+  <% end %>
+</p>
+<p>
+  <strong><%= Room.human_attribute_name('name') %>:</strong>
+  <%= @room.name %>
+</p>
+
+<p>
+  <strong><%= Room.human_attribute_name('place') %>:</strong>
+  <%= @room.place %>
+</p>
+
+<p>
+  <strong><%= Room.human_attribute_name('number') %>:</strong>
+  <%= @room.number %>
+</p>
+
+<%= link_to t('button.edit'), edit_room_path(@room) %> |
+<%= link_to t('button.back'), rooms_path %>
+
+<p>
+  <%= link_to t('message.register', model: Entry.model_name.human), new_room_entry_path(room_id: @room.id), class: 'button' %>
+</p>
+
+<p> <strong><%= t('message.list', model: Entry.model_name.human) %></strong>
+  <%= render "entries/index" %>
+</p>

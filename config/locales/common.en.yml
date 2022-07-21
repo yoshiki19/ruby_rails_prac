@@ -1,0 +1,39 @@
+en:
+  button:
+    edit: Edit
+    back: Back
+    show: Show
+    index: List
+    destroy: Destroy
+    cancel: Cancel
+    new_data: New
+    login: LogIn
+    logout: LogOut
+    top: Top
+    send: OK
+  word:
+    index: Index
+    list: List
+    new: New
+    register: Register
+    login: Login
+    confirm_ng: Confirm(Back)
+    confirm_ok: Confirm(OK)
+  message:
+    welcome: "Welcome to Reservation !!"
+    complete: "%{model} has completed"
+    cancel_complete: "%{model} was successfully canceled"
+    register_comlete: "%{model} was successfully registerd"
+    delete_complete: "%{model} was successfully deleted"
+    update_complete: "%{model} was successfully updated"
+    register: "New %{model}"
+    list: "%{model} List"
+    edit: "%{model} Edit"
+    cancel: "%{model} Cancel"
+    cancel_confirm: "%{model} is canceled. Are you sure? "
+    delete_confirm: "%{model} is deleted. Are you sure?"
+    incorrect_name: " is incorrect"
+    incorrect_number: " has to be specify as a multiple of 5"
+    room_notice: "Latest registered room is"
+  errors:
+    header: "%{count} errors occred in registlation of %{model} "

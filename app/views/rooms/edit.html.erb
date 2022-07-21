@@ -1,0 +1,4 @@
+<h1><%= t('message.edit', model: @room.model_name.human ) %></h1>
+<%= render 'form', room: @room %>
+<%= link_to t('button.show'), @room %> |
+<%= link_to t('button.back'), rooms_path %>

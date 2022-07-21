@@ -1,0 +1,31 @@
+<table>
+  <thead>
+    <tr>
+      <th><%= Entry.human_attribute_name('user_name') %></th>
+      <th><%= Entry.human_attribute_name('user_email') %></th>
+      <th><%= Entry.human_attribute_name('reserved_date') %></th>
+      <th><%= Entry.human_attribute_name('usage_time') %></th>
+      <th><%= Entry.human_attribute_name('people') %></th>
+      <th colspan="1"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @room.entries.each do |entry| %>
+      <tr>
+        <td><%= entry.user.name %></td>
+        <td><%= entry.user.email %></td>
+        <td><%= entry.reserved_date.strftime("%Y/%m/%d %H:%M") %></td>
+        <td><%= entry.usage_time %></td>
+        <td><%= entry.people %></td>
+        <td><% if current_user == entry.user %>
+          <%= link_to t("message.cancel", model: entry.model_name.human),
+            entry, method: :delete, remote: true,
+            data: { confirm: t("message.cancel_confirm",
+            model: entry.model_name.human)},
+            class: "button_cancel" %>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

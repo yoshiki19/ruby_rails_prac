@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+<%= "#{t('message.room_notice')}: #{session[:room]}" if session[:room] %>
+<h1><%= t('message.list', model: Room.model_name.human ) %></h1>
+
+<table>
+  <thead>
+    <tr>
+      <th><%= Room.human_attribute_name('name') %></th>
+      <th><%= Room.human_attribute_name('place') %></th>
+      <th><%= Room.human_attribute_name('number') %></th>
+      <th colspan="4"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @rooms.each do |room| %>
+      <tr>
+        <td><%= room.name %></td>
+        <td><%= room.place %></td>
+        <td><%= room.number %></td>
+        <td>
+          <% room.images.each do |image| %>
+            <%= image_tag image, class: "room_images" %>
+          <% end %>
+        </td>
+        <td><%= link_to t('button.show'), room %></td>
+        <% if current_user.admin %>
+          <td><%= link_to t('button.edit'), edit_room_path(room) %></td>
+          <td><%= link_to t('button.destroy'), room, method: :delete, data: { confirm: t('message.delete_confirm', model: room.model_name.human) }, class: "button_cancel" %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<% if current_user.admin %>
+  <%= link_to t("word.new"), new_room_path, class: "button" %>
+<% end %>
